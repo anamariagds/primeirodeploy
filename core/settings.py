@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
-
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-9j7x1(o)+ed&zi0f4q6iuhdvk6xzn_!d5+uqs&1b)wh1^idgsy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['anamariagds.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -141,3 +141,9 @@ RECAPTCHA_PUBLIC_KEY = config("RECAPTCHA_PUBLIC_KEY")
 RECAPTCHA_PRIVATE_KEY = config("RECAPTCHA_PRIVATE_KEY")
 
 SENDGRID_API_KEY = config("SENDGRID_API_KEY")
+
+
+
+STATIC_ROOT = "/home/anamariagds/primeirodeploy/portfolio/static"
+# or, eg,
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
