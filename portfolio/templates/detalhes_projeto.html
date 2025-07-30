@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ projeto.titulo }} | Meu Portfólio{% endblock %}
+
+{% block content %}
+    <h1 class="page-title">{{ projeto.titulo }}</h1>
+
+    <section id="detalhes" class="project-details">
+        <h3>Detalhes do Projeto</h3>
+        <p>{{ projeto.descricao }}</p>
+        
+        <div class="project-meta">
+            <div class="meta-item">
+                <strong>Tecnologias:</strong>
+                <span>{{ projeto.tecnologias|default:"Python, Django" }}</span>
+            </div>
+            <div class="meta-item">
+                <strong>Data:</strong>
+                <span>{{ projeto.data|default:"2025" }}</span>
+            </div>
+            
+            {% if projeto.github %}
+            <div class="meta-item">
+                <strong>GitHub:</strong>
+                <a href="{{ projeto.github }}" target="_blank">Repositório</a>
+            </div>
+            {% endif %}
+        </div>
+        
+    </section>
+
+{% endblock %}
+

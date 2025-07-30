@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Projetos - Meu Portfólio{% endblock %}
+
+{% block content %}
+    <h1 class="page-title">Meus Projetos</h1>
+    
+    <section class="projects-section">
+        <p>Aqui estão alguns dos projetos que desenvolvi. Clique em um projeto para ver mais detalhes.</p>
+        
+        <ul class="project-list">
+            {% for projeto in projetos %}
+                <li class="project-item">
+                    <a href="{% url 'detalhes_projeto' id_projeto=projeto.id %}">{{ projeto.titulo }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
+

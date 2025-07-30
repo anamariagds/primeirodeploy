@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{projeto.titulo}} | Meu Portfólio{% endblock %}
+
+{% block content %}
+    <h1>{{projeto.titulo}}</h1>
+    <section>
+        <h3>Detalhes do projeto</h3>
+        <p>{{projeto.descricao}}</p>
+
+        <h3>Tecnologias</h3>
+        <p>{{projeto.tecnologia}}</p>
+
+        <a href="{{projeto.github}}">GitHub</a>
+    </section>
+{% endblock %}

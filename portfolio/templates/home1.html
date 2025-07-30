@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | Meu Portfólio {% endblock %}
+
+{% block content %}
+    <section>
+        <h1>Sobre mim</h1>
+        <p>Olá! Meu nome é Ana Maria, sou desenvolvedora e professora na Asimov Academy.</p>
+    </section>
+    <section>
+        <h2>Habilidades</h2>
+        <ul>
+          {% for chave, dados in habilidades.items %}
+            <li>{{dados.nome}}</li>
+          {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Contatos</h2>
+        <p>Email: ana@exemplo.com</p>
+        <p>Linkedin: </p>
+    </section>
+{% endblock %}
+    

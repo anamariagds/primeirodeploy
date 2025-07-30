@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | Meu Portfólio{% endblock %}
+
+{% block content %}
+    <h1 class="page-title">Bem-vindo ao meu portfólio</h1>
+
+    <section class="about-section">
+        <div class="about-grid">
+            <div class="profile-image-container">
+                <img src="{% static '/img/anamaria.png' %}" alt="Ana Maria" class="profile-image">
+            </div>
+            <div class="about-content">
+                <h2>Sobre Mim</h2>
+                <p>Olá! Meu nome é Ana Maria, sou desenvolvedora e professora na Asimov Academy.</p>
+               
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <h2>Habilidades</h2>
+        <ul class="skills-list">
+            {% for habilidade in habilidades %}
+                <li class="skill-item" >{{ habilidade.nome }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% if messages %}
+        {% for message in messages  %}
+            {{message}}
+        {% endfor %}
+    {% endif %}
+    <section id="contact" class="contact-section">
+        <h2>Contato</h2>
+        <div class="contact-info">
+            <form method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+            <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}
+

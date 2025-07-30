@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Projetos | Meu Portfólio {% endblock %}
+
+{% block content %}
+    <section>
+        <h1>Meus Projetos</h1>
+        <p>Projetos que eu desenvolvi.</p>
+
+        <ul>
+            {% for key, infos in projetos.items %}
+                <li><a href="{% url 'detalhes_projeto' id_projeto=key %}">{{infos.titulo}}</a></li>
+            {% endfor %}
+        </ul>
+
+    </section>
+
+{% endblock %}
