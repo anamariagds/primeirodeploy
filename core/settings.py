@@ -144,6 +144,6 @@ SENDGRID_API_KEY = config("SENDGRID_API_KEY")
 
 
 
-STATIC_ROOT = "/home/anamariagds/primeirodeploy/portfolio/static"
+#STATIC_ROOT = "/home/anamariagds/primeirodeploy/portfolio/static"
 # or, eg,
-#STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
