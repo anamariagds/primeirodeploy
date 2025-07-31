@@ -144,6 +144,14 @@ SENDGRID_API_KEY = config("SENDGRID_API_KEY")
 
 
 
-STATIC_ROOT = "/home/anamariagds/primeirodeploy/portfolio/static"
-# or, eg,
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+# Diretório onde o Django vai coletar os arquivos estáticos para produção
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
+# Diretórios adicionais onde o Django deve procurar arquivos estáticos durante o desenvolvimento
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "portfolio/static"),
+]
+
+# URL base para acessar os arquivos estáticos no navegador
+STATIC_URL = "/static/"
