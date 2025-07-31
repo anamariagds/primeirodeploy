@@ -150,8 +150,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Diretórios adicionais onde o Django deve procurar arquivos estáticos durante o desenvolvimento
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "portfolio/static"),
+    os.path.join(BASE_DIR, 'portfolio', 'static'),
 ]
-
 # URL base para acessar os arquivos estáticos no navegador
 STATIC_URL = "/static/"
